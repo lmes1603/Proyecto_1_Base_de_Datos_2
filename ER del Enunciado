@@ -1,0 +1,7 @@
+Esto es lo que medio entendi del Modelo, tengo algunas dudas:
+ - El Atributo INFA_PERN_TIPN_CODIGO, no entiendo muy bien de donde sale o se hereda, pareciera que debia se de la Tabla  
+  Persona pero esta tabla no tiene esa fila.
+ - Las tablas Administrador y Jefe deberian Heredar algo de la Tabla Persona?
+
+
+Cualquier Correcion, es bienvenida, por favor avisan.
