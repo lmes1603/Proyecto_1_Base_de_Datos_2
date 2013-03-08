@@ -1,0 +1,52 @@
+Maestras:
+	- Personas. *
+		- personas.xls
+		- personas.xml
+		- personasxml   lo mismo???
+	- Edificios.*
+		- edificio.xml
+	- Estatus. *
+		- estatus.sql
+	- Pisos. *
+		- pisos.sql
+	- Prioridad.??? *
+		- prioridad.sql
+	- Servicios. *
+		- servicios.xls
+	- Tipo de Material. *
+		- tipomaterial.sql
+	
+
+Transaccionales:
+	- Asinacion de Materiales.*
+		- asignarmaterial.xls
+	- Asignacion de Personal. *
+		- asig_personal.tvs
+	- Asignacion de Tareas. *
+		asig_tareas.xls que es, para que sirve????
+ 	- Administradores.? *
+		- adminis.txt? que es INFA_PERN_TIPN_CODIGO????
+	- Items. *
+		- items.tvs
+	- Jefes. *
+		- jefes.tvs
+	- Tipo de Servicio. *
+		- tiposervicio.sql
+	- Formatos.? +|-
+		- SDS_FORMATOS_FMO_DATA_TABLE.ctl
+		- SDS_FORMATOS_FMO_DATA_TABLE.ldr que es??
+			que es JEF_INFA_PERN_TIPN_CODIGO??????
+	- Localidades. *
+		- SDS_LOCALIDADES_LC_DATA_TABLE.ctl
+		- SDS_LOCALIDADES_LC_DATA_TABLE.ldr
+	- Materiales. *
+		- SDS_MATERIALES_MTL_DATA_TABLE.ldr
+		- SDS_MATERIALES_MTL_DATA_TABLE_1.ctl
+
+
+
+Ni Idea:
+	- Items Historicos.???
+		- items_historicos.xls???
+	- Centro y Costo.????????*
+		- centrocosto.sql???????*
