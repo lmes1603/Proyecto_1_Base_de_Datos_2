@@ -1,0 +1,71 @@
+create or replace
+procedure leer_edificio as
+  vArchivo    utl_file.file_type;
+  vLinea      varchar2(4000);
+  i number;
+  j number;
+  k number;
+  ban boolean;
+  spli varchar2(200);
+  pru varchar2(200);
+  cod varchar2(200);
+  nomb varchar2(200);
+  respaldo varchar2(4000);
+   
+BEGIN
+  vArchivo := utl_File.fopen ('PROYECT','edificio.xml', 'R');
+  i:=1;
+  j:=0;
+  k:=0;
+  ban:=false;
+  Loop
+  i:=1;
+  spli:='';
+    Begin
+      utl_file.get_line (vArchivo, vLinea);
+      
+    exception
+      when NO_DATA_FOUND then
+        exit;
+    end;
+    respaldo:=vLinea;
+      while i<>LENGTH(respaldo) loop
+        if (substr(respaldo,i,1) = '!') then
+        k:=1;
+          while k<>0 loop
+          i:= i+1;
+            if (substr(respaldo,i,1) = '[' and k=1) then
+            k:=2;
+            elsif (substr(respaldo,i,1) = '[' and k=2) then
+            k:=3;
+            elsif (substr(respaldo,i,1)=']' and k=3) then
+            k:=0;
+            elsif k=3 then
+            ban:=true;
+            spli:=spli||substr(respaldo,i,1);
+            end if;
+          end loop;
+        end if;
+        i:=i+1;
+        
+      end loop;
+      if (ban = true and j=1) then
+      pru:= pru || spli ||'  ';
+      k:=0;
+      j:=0;
+      nomb:=spli;
+      insert into Edificio(edo_codigo,edo_nombre) values (cod,nomb);
+      pru:='';
+      ban:=false;
+      elsif (ban = true and j=0) then
+      pru:=pru ||  spli ||'  ';
+      cod:=spli;
+      k:=0;
+      j:=1;
+      ban:=false;
+      end if;
+  end loop;
+  utl_file.fclose (vArchivo);
+  return;
+
+END;
